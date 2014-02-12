@@ -1,6 +1,8 @@
 Android
 ---------
+* uninstall your app by package name
 adb uninstall com.ddw.ccw
+* clear app data
 adb shell pm clear com.samsung.galaxylife
 find res -iname "profile_photo*" |xargs file
 * taking screenshot
