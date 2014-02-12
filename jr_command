@@ -1,0 +1,13 @@
+Android
+---------
+adb uninstall com.ddw.ccw
+adb shell pm clear com.samsung.galaxylife
+find res -iname "profile_photo*" |xargs file
+* taking screenshot
+adb shell screencap -p | perl -pe 's/\x0D\x0A/\x0A/g' > screen.png
+adb shell screencap -p | perl -pe 's/\x0D\x0A/\x0A/g' > screen.png && convert screen.png screen.jpg && convert screen.jpg -resize 50% screen_50.jpg
+
+Command Line
+------------
+Seach for filename: find . -iname "screenshot*"
+find res -iname "profile_photo*" |xargs file
