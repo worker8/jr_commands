@@ -1,15 +1,28 @@
 Android
 ---------
-* uninstall your app by package name
-adb uninstall com.ddw.ccw
-* clear app data
-adb shell pm clear com.samsung.galaxylife
-find res -iname "profile_photo*" |xargs file
-* taking screenshot
-adb shell screencap -p | perl -pe 's/\x0D\x0A/\x0A/g' > screen.png
-adb shell screencap -p | perl -pe 's/\x0D\x0A/\x0A/g' > screen.png && convert screen.png screen.jpg && convert screen.jpg -resize 50% screen_50.jpg
+*** uninstall your app by package name ***
+    adb uninstall com.ddw.ccw
+    adb uninstall com.samsung.galaxylife
+*** clear app data ***
+    adb shell pm clear com.samsung.galaxylife
+    find res -iname "profile_photo*" |xargs file
+*** taking screenshot ***
+    adb shell screencap -p | perl -pe 's/\x0D\x0A/\x0A/g' > screen.png
+    adb shell screencap -p | perl -pe 's/\x0D\x0A/\x0A/g' > screen.png && convert screen.png screen.jpg && convert screen.jpg -resize 50% screen_50.jpg && cp screen_50.jpg ~/Desktop/ && touch ~/Desktop/screen_50.jpg
+*** convert images using python script ***
+    ./drawable_convert.py -d res/drawable-ldpi/ -d res/drawable-mdpi/ -d res/drawable-hdpi res/drawable-xhdpi/REPLACE.png
+*** check if apk is signed ***
+    jarsigner -verify -verbose -certs
 
 Command Line
 ------------
 Seach for filename: find . -iname "screenshot*"
 find res -iname "profile_photo*" |xargs file
+ack -a "temp" .
+find . -type f -exec grep -l "settings_eps_server_url" {} +
+
+/Applications/adt-bundle-mac-x86_64-20130514/
+* For hiding desktop
+do shell script "chflags hidden ~/Desktop/*"
+
+
