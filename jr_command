@@ -13,16 +13,25 @@ Android
     ./drawable_convert.py -d res/drawable-ldpi/ -d res/drawable-mdpi/ -d res/drawable-hdpi res/drawable-xhdpi/REPLACE.png
 *** check if apk is signed ***
     jarsigner -verify -verbose -certs
+*** check keystore alias ***
+    keytool -list -keystore ~/Desktop/junrong.keystore
+*** check whether debuggable ***
+    /Applications/adt-bundle-mac-x86_64-20130514/sdk/build-tools/19.0.3/aapt dump xmltree GL_prod_v2.0.4.11.1_aligned.apk AndroidManifest.xml | grep debuggable
+keytool -printcert -file CERT.RSA
+keytool -list -keystore keystore.dat
 
 Command Line
 ------------
 Seach for filename: find . -iname "screenshot*"
 find res -iname "profile_photo*" |xargs file
 ack -a "temp" .
+ack -a "19.0.0" -l |grep build.gradle
 find . -type f -exec grep -l "settings_eps_server_url" {} +
 
 /Applications/adt-bundle-mac-x86_64-20130514/
 * For hiding desktop
 do shell script "chflags hidden ~/Desktop/*"
 
-
+Git
+--------
+git tag -a v1.4 -m 'my version 1.4'
