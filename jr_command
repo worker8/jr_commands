@@ -3,6 +3,7 @@ Android
 *** uninstall your app by package name ***
     adb uninstall com.ddw.ccw
     adb uninstall com.samsung.galaxylife
+    adb uninstall com.samsung.galaxylife; adb install ~/Downloads/REPLACEPLEASE.apk;adb shell am start -n com.samsung.galaxylife/.TimeLineActivity
 *** clear app data ***
     adb shell pm clear com.samsung.galaxylife
     find res -iname "profile_photo*" |xargs file
@@ -35,3 +36,4 @@ do shell script "chflags hidden ~/Desktop/*"
 Git
 --------
 git tag -a v1.4 -m 'my version 1.4'
+git log --topo-order --graph -u -L 1015,1015:src/com/samsung/galaxylife/fragments/ProfileFragment.java <-- check who introduce a specific line
