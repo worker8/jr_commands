@@ -19,6 +19,7 @@ alias adb=/Applications/adt-bundle-mac-x86_64-20130514/sdk/platform-tools/adb
 alias fastboot=/Applications/adt-bundle-mac-x86_64-20130514/sdk/platform-tools/fastboot
 alias logd='ruby logddw.rb '
 alias jr_command='cat ~/jr_command/jr_command'
+alias lsapk='ls -lht build/outputs/apk/'
 source /Users/tanjunrong/.profile
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
