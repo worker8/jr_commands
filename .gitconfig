@@ -1,0 +1,28 @@
+[user]
+	name = Tan Jun Rong
+	email = jr@favoritemedium.com
+[alias]
+  co = checkout
+  ci = commit
+  st = status
+  br = branch
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all
+  type = cat-file -t
+  dump = cat-file -p
+  tree = diff-tree --name-only -r
+  stash-ki = stash --keep-index
+  ap = add -p
+[core]
+	editor = vim
+	excludesfile = /Users/tanjunrong/.gitignore_global
+  ;whitespace=-indent-with-non-tab,trailing-space,cr-at-eol,tab-in-indent
+[color]
+  ui = auto
+  ;whitespace = trailing-space
+  trailing-space = red reverse
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
