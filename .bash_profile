@@ -6,9 +6,12 @@
 #if [ -f /opt/local/etc/bash_completion ]; then
 #    . /opt/local/etc/bash_completion
 #fi
-
+if [ -f ~/.git-completion.bash ]; then
+    . ~/.git-completion.bash
+  fi
+fi
 ### Added by the Heroku Toolbelt
-export PATH="/Applications/adt-bundle-mac-x86_64-20130514/gradle-1.11/bin:/usr/local/heroku/bin:$PATH"
+export PATH="/Applications/adt-bundle-mac-x86_64-20130514/gradle-1.11/bin:/usr/local/heroku/bin:/Applications/MacVim-snapshot-73/:$PATH"
 export DIGITALES_SLAVES_KEY=~/.ssh/south-east-digitales.pem
 export SSL_CERT_FILE=/usr/local/etc/openssl/certs/cert.pem
 alias pad='padrino'
