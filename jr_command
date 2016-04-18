@@ -4,6 +4,7 @@ Android
     adb uninstall com.ddw.ccw
     adb uninstall com.samsung.galaxylife
     adb uninstall com.samsung.galaxylife; adb install ~/Downloads/REPLACEPLEASE.apk;adb shell am start -n com.samsung.galaxylife/.TimeLineActivity
+    adb uninstall com.ddw.ccw; adb install AnimalGallery_v2.0.0.apk ;adb shell am start -n com.ddw.ccw/.main.BaseActivity
 *** clear app data ***
     adb shell pm clear com.samsung.galaxylife
     find res -iname "profile_photo*" |xargs file
@@ -21,6 +22,9 @@ Android
 keytool -printcert -file CERT.RSA
 keytool -list -keystore keystore.dat
 
+*** debugging sqlite ***
+adb -d shell 'run-as com.deliver.eat cat /data/data/com.deliver.eat/databases/deliver_eat.db > /storage/emulated/legacy/deliver_eat.db' && adb pull /storage/emulated/legacy/deliver_eat.db
+adb -d shell 'run-as com.deliver.eat cat /data/data/com.deliver.eat/databases/deliver_eat.db > /storage/emulated/legacy/deliver_eat.db' && adb pull /storage/emulated/legacy/deliver_eat.db && open deliver_eat.db
 Command Line
 ------------
 Seach for filename: find . -iname "screenshot*"
@@ -33,7 +37,14 @@ find . -type f -exec grep -l "settings_eps_server_url" {} +
 * For hiding desktop
 do shell script "chflags hidden ~/Desktop/*"
 
+** for checking storage space
+du -d 1 -h ~/ | sort -n |grep "\dG"
+
 Git
 --------
 git tag -a v1.4 -m 'my version 1.4'
 git log --topo-order --graph -u -L 1015,1015:src/com/samsung/galaxylife/fragments/ProfileFragment.java <-- check who introduce a specific line
+
+Binding of Isaac mod path
+---
+open ~/Library/Application\ Support/Steam/SteamApps/common/The\ Binding\ of\ Isaac\ Rebirth/The\ Binding\ of\ Isaac\ Rebirth.app/Contents/Resources/resources/
