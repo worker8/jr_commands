@@ -21,3 +21,6 @@ worker8@noobbook:LearnOpenGL (master)$ du -d 1 -h ~/ | sort -n |grep "\dG"
  90G	/Users/worker8//Movies
 199G	/Users/worker8/
 ```
+
+## color your terminal
+export PS1="\[\033[00;32m\]\u\[\033[00;32m\]@\[\033[00;32m\]\h:\[\033[0;37m\]\W \[\033[0;36m\]$(scm_ps1)\[\033[00m\]$\[\033[00m\]"
